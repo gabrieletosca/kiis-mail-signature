@@ -156,7 +156,7 @@ label input~.success-validation-check, label select~.success-validation-check {
 }
 label input~span, label select~span {
     opacity: 0;
-    color: #b34900;
+    color: #FF462D;
     font-size: 14px;
     margin-top: 3px;
     transition: all .1s;
@@ -183,7 +183,7 @@ label input::-ms-input-placeholder, label select::-ms-input-placeholder {
     font-size: 16px;
 }
 label input.blurred:invalid, label select.blurred:invalid {
-    box-shadow: 0 2px 0 0 #b34900;
+    box-shadow: 0 2px 0 0 #FF462D;
 }
 label input.blurred:invalid~span:not(.success-validation-check), label select.blurred:invalid~span:not(.success-validation-check) {
     display: inline-block;
@@ -221,13 +221,15 @@ form button {
     transition: .1s all;
 }
 form button:hover {
-    background-color: #f56500;
+    background-color: #fafafc;
+    border-color: #fafafc;
+    color: #3d3c3c;
 }
 form button:active {
     box-shadow: none;
     height: 48px;
     margin-top: 25px;
-    background-color: #f56500;
+    background-color: #FF462D;
 }
 select {
     cursor: pointer;
@@ -236,7 +238,7 @@ select:invalid {
     color: #d3d8dc;
 }
 #formErrorContainer {
-    color: #b34900;
+    color: #FF462D;
     max-width: 400px;
     width: 95%;
     margin: 10px 0;
