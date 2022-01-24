@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang='en-us' dir='ltr'>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/style/style.css">
+	<title>Mail Signature KIIS</title>
+</head>
+
+<body>
+
+	<header role="banner">
+		<img src="https://www.kyndryl.com/content/experience-fragments/kyndrylprogram/de/de/sites/header/master/_jcr_content/root/header_copy/image.coreimg.svg/1636019574172/kyndryl-logo.svg" alt='Kyndryl Logo' title='Kyndryl Logo'>
+	</header>
+
+	<main style="background-color: #F2F1EE;" role="main">
+
+		<section class='expository' role="region" aria-label="expository">
+			<h1 style="color: #FF462D;">Kyndryl Email Signature</h1>
+			<p>Enter the information below as it should appear on your email signature.</p>
+			<p>Your HTML email signature will be generated. Just copy and paste it into Outlook and you're done!</p>
+		</section>
+		<!--/ End Expository section -->
+
+		<!-- Start main form -->
+		<form method='POST' action='.' enctype='application/x-www-form-urlencoded' role="form" id="signatureForm">
+
+			<p id='formErrorContainer'></p>
+
+			<label for='name'>Name and Surname
+				<input type='text' id='name' name='name' title='Enter name' placeholder='e.g. John Doe' pattern='^([^0-9]*)$' autofocus required>
+				<span>Enter valid name</span>
+				<span class='success-validation-check'></span>
+			</label>
+
+			<label for='pronouns'>Pronouns (Optional)
+				<select id='pronouns' name='pronouns'>
+					<option class='disabled' value='' selected disabled>Select</option>
+					<option value='he/him/his'>he/him/his</option>
+					<option value='she/her/hers'>she/her/hers</option>
+					<option value="they/them/their">they/them/their</option>
+				</select>
+				<span>Please select a logo</span>
+				<span class='success-validation-check'></span>
+			</label>
+
+			<label for='position'>Job Title
+				<input type='text' id='position' name='position' title='Enter position' placeholder='e.g. IT Specialist' pattern='^([^0-9]*)$' required>
+				<span>Enter valid position</span>
+				<span class='success-validation-check'></span>
+			</label>
+
+			<label for='mobile_phone'>Phone Number
+				<input type='tel' id='mobile_phone' name='mobile_phone' title='Enter phone number' placeholder='e.g. 3486795123' required>
+				<span>Enter valid phone number</span>
+				<span class='success-validation-check'></span>
+			</label>
+
+			<label for='email'>Email Address
+				<input type='email' id='email' name='email' title='Enter Kyndryl email address' placeholder='e.g. john.doe@kyndryl.com' pattern='^[A-Za-z0-9._%+-]+@kyndryl.com$' required>
+				<span>Enter valid Kyndryl email address</span>
+				<span class='success-validation-check'></span>
+			</label>
+
+			<label for='logo'>Logo
+				<select id='logo' name='logo' required>
+					<option value='/email_signature.png'>Kyndryl Italia Innovation Services</option>
+				</select>
+				<span>Please select a logo</span>
+				<span class='success-validation-check'></span>
+			</label>
+
+			<button type='submit' title='Generate' id='generateButton'>Generate</button>
+
+		</form>
+		<!--/ End Main Form -->
+
+	</main>
+
+	<template id="signatureTemplate">
+
+		<table cellpadding="0" cellspacing="0" border="0" style="background: none; border-width: 0px; border: 0px; margin: 0; padding: 0;">
+
+			<!-- Name and Surname Row -->
+			<tbody><tr>
+				<td colspan="2" style="padding-bottom: 0px; color: #000000; font-size: 14pt; font-weight: 600; font-family: Arial, Helvetica, sans-serif;" data-column="name"></td>
+			</tr>
+			<!--/ End Name and Surname Row -->
+
+			<!-- Pronouns Row -->
+			<tr>
+				<td colspan="2" style="padding-bottom: 2px; color: #000000; font-size: 12pt; font-family: Arial, Helvetica, sans-serif;" data-column="pronouns"></td>
+			</tr>
+			<!--/ End Pronouns Row -->
+
+			<!-- Job Title Row -->
+			<tr>
+				<td colspan="2" style="padding-bottom: 2px; color: #000000; font-size: 12pt; font-family: Arial, Helvetica, sans-serif;" data-column="position"></td>
+			</tr>
+			<!--/ End Job Title Row -->
+
+			<!-- Mobile Phone Row -->
+			<tr>
+				<td colspan="2" style="padding-bottom: 2px; color: #000000; font-size: 12pt; font-family: Arial, Helvetica, sans-serif;">
+					<a href="tel:" style="color: #000000; text-decoration:none !important;"><span style="color:#000000 !important; font-family: Arial, Helvetica, sans-serif;">M | </span><span style="color:#000000 !important; font-family: Arial, Helvetica, sans-serif;" data-column="mobile_phone"></span>
+					</a>
+				</td>
+			</tr>
+			<!--/ End Mobile Phone Row -->
+
+			<!-- Email Address Row -->
+			<tr>
+				<td colspan="2" style="padding-bottom: 4px; color: #000000; font-size: 12pt; font-family: Arial, Helvetica, sans-serif; text-decoration:none;">
+					<a href="mailto:" style="color: #000000; text-decoration-color:#000000 !important; text-decoration:none !important;">
+						<span style="color:#000000 !important; font-family: Arial, Helvetica, sans-serif;">E | </span><span style="color:#000000 !important; font-family: Arial, Helvetica, sans-serif;" data-column="email"></span>
+					</a>
+				</td>
+			</tr>
+			<!--/ End Email Address Row -->
+			
+			<!-- Logo Row -->
+			<tr>
+				<td>
+					<br>
+					<img src="" style="width:260px;" alt="Logo Kyndryl Italia Innovation Services" title="kyndryl.com" data-logo>
+				</td>
+			</tr>
+			<!--/ End Logo Row -->
+		
+		</tbody>
+
+	</table>
+		
+	</template>
+
+	<script>
+
+		// Adding the error validation
+		const inputs = document.querySelectorAll('input, select');
+		const inputLength = inputs.length;
+
+		for (let i=0; i<inputLength; i++) {
+			inputs[i].addEventListener('blur', function() {
+				if (!this.classList.contains('blurred')) {
+					this.classList.add('blurred');
+				}
+			}, false);
+		}
+
+		const signatureForm = document.getElementById("signatureForm");
+		signatureForm.addEventListener("submit", (ev) => {
+
+			if (signatureForm.checkValidity()) {
+				ev.preventDefault();
+				const templateEle = document.getElementById("signatureTemplate").content.querySelector("table");
+				templateEle.querySelector("[data-column='name']").innerText = document.getElementById("name").value;
+				templateEle.querySelector("[data-column='pronouns']").innerText = document.getElementById("pronouns").value;
+				templateEle.querySelector("[data-column='position']").innerText = document.getElementById("position").value;
+				templateEle.querySelector("[data-column='mobile_phone']").innerText = document.getElementById("mobile_phone").value;
+				templateEle.querySelector("[href='tel:']").href = document.getElementById("mobile_phone").value;
+				templateEle.querySelector("[data-column='email']").innerText = document.getElementById("email").value;
+				templateEle.querySelector("[href='mailto:']").href = document.getElementById("email").value;
+				// templateEle.querySelector("[data-column='linkedin']").innerText = document.getElementById("linkedin").value;
+				templateEle.querySelector("[data-logo]").src = document.getElementById("logo").value;
+				document.querySelector("body").innerHTML = "";
+				document.querySelector("body").appendChild(templateEle);
+			}
+
+		}, false);
+
+	</script>
+
+</body>
+</html>
