@@ -10,8 +10,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-family: "Rubik", sans-serif;
-    font-weight: 500;
+    font-family: "TWK Everett,Helvetica,Arial,sans-serif";
 }
 *:focus {
     outline: none;
