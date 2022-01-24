@@ -11,7 +11,7 @@
 <body>
 
 	<header role="banner">
-		<img src="https://www.kyndryl.com/content/experience-fragments/kyndrylprogram/de/de/sites/header/master/_jcr_content/root/header_copy/image.coreimg.svg/1636019574172/kyndryl-logo.svg" alt='Kyndryl Logo' title='Kyndryl Logo'>
+		<img src="/assets/kyndryl_logo.svg" alt='Kyndryl Logo' title='Kyndryl Logo'>
 	</header>
 
 	<main role="main">
@@ -161,7 +161,6 @@
 				templateEle.querySelector("[href='tel:']").href = document.getElementById("mobile_phone").value;
 				templateEle.querySelector("[data-column='email']").innerText = document.getElementById("email").value;
 				templateEle.querySelector("[href='mailto:']").href = document.getElementById("email").value;
-				// templateEle.querySelector("[data-column='linkedin']").innerText = document.getElementById("linkedin").value;
 				templateEle.querySelector("[data-logo]").src = document.getElementById("logo").value;
 				document.querySelector("body").innerHTML = "";
 				document.querySelector("body").appendChild(templateEle);
