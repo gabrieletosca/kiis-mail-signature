@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "TWK Everett,Helvetica,Arial,sans-serif";
+    font-family: 'TWK Everett,Helvetica,Arial,sans-serif';
     font-style: normal;
     font-weight: 400;
     src: url("fonts/Everett-Regular.ttf") format("truetype");
@@ -10,7 +10,6 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-family: "TWK Everett,Helvetica,Arial,sans-serif";
 }
 *:focus {
     outline: none;
@@ -18,7 +17,7 @@
 html, body {
     height: 100%}
 body {
-    background-color: #f3f4f5;
+    background-color: #F2F1EE;
 }
 main {
     display: flex;
@@ -60,22 +59,10 @@ p {
 }
 a {
     text-decoration: none;
-    color: #ff6900;
-}
-a#videoLink::before {
-    content: "";
-    background-image: url("/assets/video-icon.svg");
-    height: 19px;
-    width: 23px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    position: relative;
-    top: 3px;
-    right: 5px;
+    color: #FF462D;
 }
 h1 {
-    font-family: "Fjalla One", sans-serif;
-    color: #ff6900;
+    color: #FF462D;
     height: 42px;
     font-size: 34px;
     line-height: 39px;
@@ -87,16 +74,13 @@ button, a.button {
     height: 50px;
     border-radius: 2px;
     font-size: 18px;
-    background-color: #ff6900;
+    background-color: #187E3F;
     color: #fff;
     border: none;
     box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, .15);
     margin-top: 23px;
     cursor: pointer;
     transition: .1s all;
-}
-button:hover, a.button:hover {
-    background-color: #f56500;
 }
 .no-mobile {
     width: 100%;
@@ -115,25 +99,6 @@ button:hover, a.button:hover {
 .no-mobile .button img {
     margin-right: 5px;
 }
-.loading-screen {
-    height: 100vh;
-    width: 100vw;
-    background-color: #f3f4f5;
-    position: fixed;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.loading-screen g#Group-75-Copy {
-    transform-origin: center;
-    animation: backwards-spin 3s infinite linear;
-}
-.loading-screen g#Group {
-    transform-origin: center;
-    transform-box: fill-box;
-    animation: spin 3s infinite linear;
-}
 @keyframes spin {
     0% {
     transform: translate(35%,  35%) rotate(0deg);
@@ -149,7 +114,8 @@ button:hover, a.button:hover {
 100% {
     transform: rotate(-360deg);
 }
-}form {
+}
+form {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -245,7 +211,7 @@ form button {
     height: 50px;
     border-radius: 2px;
     font-size: 18px;
-    background-color: #ff6900;
+    background-color: #FF462D;
     color: #fff;
     border: none;
     box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, .15);
