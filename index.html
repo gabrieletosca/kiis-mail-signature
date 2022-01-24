@@ -157,8 +157,10 @@
 				templateEle.querySelector("[data-column='name']").innerText = document.getElementById("name").value;
 				templateEle.querySelector("[data-column='pronouns']").innerText = document.getElementById("pronouns").value;
 				templateEle.querySelector("[data-column='position']").innerText = document.getElementById("position").value;
-				templateEle.querySelector("[data-column='mobile_phone']").innerText = document.getElementById("mobile_phone").value;
-				templateEle.querySelector("[data-column='email']").innerText = document.getElementById("email").value;
+				//templateEle.querySelector("[data-column='mobile_phone']").innerText = document.getElementById("mobile_phone").value;
+				templateEle.querySelector("[href='tel:']").href = document.getElementById("mobile_phone").value;
+				//templateEle.querySelector("[data-column='email']").innerText = document.getElementById("email").value;
+				templateEle.querySelector("[href='mailto:']").href = document.getElementById("email").value;
 				templateEle.querySelector("[data-logo]").src = document.getElementById("logo").value;
 				document.querySelector("body").innerHTML = "";
 				document.querySelector("body").appendChild(templateEle);
