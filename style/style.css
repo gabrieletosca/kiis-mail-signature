@@ -142,7 +142,7 @@ label input, label select {
     color: #303d46;
 }
 label input~.success-validation-check, label select~.success-validation-check {
-    background-image: url("/assets/check.svg");
+    background-image: url("./assets/check.svg");
     background-repeat: no-repeat;
     position: relative;
     width: 17px;
