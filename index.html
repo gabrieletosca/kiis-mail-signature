@@ -111,9 +111,7 @@
 			<!-- Email Address Row -->
 			<tr>
 				<td colspan="2" style="padding-bottom: 4px; color: #000000; font-size: 12pt; font-family: Arial, Helvetica, sans-serif; text-decoration:none;">
-					<a href="mailto:" style="color: #000000; text-decoration-color:#000000 !important; text-decoration:none !important;">
 						<span style="color:#000000 !important; font-family: Arial, Helvetica, sans-serif;">E | </span><span style="color:#000000 !important; font-family: Arial, Helvetica, sans-serif;" data-column="email"></span>
-					</a>
 				</td>
 			</tr>
 			<!--/ End Email Address Row -->
@@ -157,9 +155,7 @@
 				templateEle.querySelector("[data-column='pronouns']").innerText = document.getElementById("pronouns").value;
 				templateEle.querySelector("[data-column='position']").innerText = document.getElementById("position").value;
 				templateEle.querySelector("[data-column='mobile_phone']").innerText = document.getElementById("mobile_phone").value;
-				//templateEle.querySelector("[href='tel:']").href = document.getElementById("mobile_phone").value;
 				templateEle.querySelector("[data-column='email']").innerText = document.getElementById("email").value;
-				//templateEle.querySelector("[href='mailto:']").href = document.getElementById("email").value;
 				templateEle.querySelector("[data-logo]").src = document.getElementById("logo").value;
 				document.querySelector("body").innerHTML = "";
 				document.querySelector("body").appendChild(templateEle);
